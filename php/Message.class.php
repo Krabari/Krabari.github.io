@@ -59,7 +59,7 @@ class Message extends Init{
 
         // Dans d'autres cas, on est redirigé vers le site d'accueil."
         else{
-            header('Location: http://localhost/3wa/Portfolio');
+            header('Location: http://localhost/3wa/Portfolio/index.php');
         }
 
     }

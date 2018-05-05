@@ -21,7 +21,7 @@ class Logout extends Init{
 		}
 
 		// Dans le cas ou on est déconnecté et que l'on tente de taper le chemin vers le fichier "logout.php" dans l'url, on est redirigé vers le site d'accueil.
-		header('Location: http://localhost/3wa/Portfolio');
+		header('Location: http://localhost/3wa/Portfolio/index.php');
 
     }
 

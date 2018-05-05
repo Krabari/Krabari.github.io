@@ -48,13 +48,13 @@ class Open_session extends Init{
                // On ajoute en mémoire un message de notification qui s'affichera sur la page d'accueil.
                 $this->flashBag->ajouter("Connexion établie avec succès.");
 
-                header('Location: http://localhost/3wa/Portfolio');
+                header('Location: http://localhost/3wa/Portfolio/index.php');
             }
         }
 
         // Dans d'autres cas, comme quand on tente d'acceder à cette page (open_session.php) avec l'url en étant connecté, on est redirigé vers le site d'accueil
         else{
-            header('Location: http://localhost/3wa/Portfolio');
+            header('Location: http://localhost/3wa/Portfolio/index.php');
         }  
 
     }

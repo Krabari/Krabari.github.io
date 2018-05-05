@@ -39,7 +39,7 @@ class Add_answer extends Init{
         // Dans le cas ou on tente de taper le chemin vers le fichier "add_answer.php" dans l'url,
         // on est redirigé vers le site d'accueil pour ne pas envoyer de messages vides.
         else{
-            header('Location: http://localhost/3wa/Portfolio');
+            header('Location: http://localhost/3wa/Portfolio/index.php');
         }
 
     }

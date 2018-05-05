@@ -23,7 +23,7 @@ class Remove_answer extends Init{
 
             // on verifie si l'id du message existe:
             if(!intval($message['existe'])){
-                header('Location: http://localhost/3wa/Portfolio');
+                header('Location: http://localhost/3wa/Portfolio/index.php');
             }
 
             else if (array_key_exists("id", $_GET) && array_key_exists("id_user", $_GET) && $this->userSession->getId() == $_GET["id_user"]){
@@ -47,7 +47,7 @@ class Remove_answer extends Init{
 
         // Sinon on est redirigé vers le site d'accueil
         else{
-            header('Location: http://localhost/3wa/Portfolio');
+            header('Location: http://localhost/3wa/Portfolio/index.php');
         }
 
     }

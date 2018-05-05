@@ -12,7 +12,7 @@ class Inscription extends Init{
 
     public function main(){
 		if ($this->userSession->estConnecte()){
-		    header('Location: http://localhost/3wa/Portfolio');
+		    header('Location: http://localhost/3wa/Portfolio/index.php');
 		}     
     }
 

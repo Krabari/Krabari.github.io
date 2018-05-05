@@ -48,7 +48,7 @@ class Add_user extends Init{
                 $this->flashBag = new FlashBag("flash-bag");
                 $this->flashBag->ajouter("Inscription établie avec succès.");
 
-                header('Location: http://localhost/3wa/Portfolio');
+                header('Location: http://localhost/3wa/Portfolio/index.php');
             }
 
         }
@@ -56,7 +56,7 @@ class Add_user extends Init{
         // Dans le cas ou on tente de taper le chemin vers le fichier "add_user.php" dans l'url,
         // on est redirigé vers le site d'accueil pour éviter des nouvelles données vides.
         else{
-            header('Location: http://localhost/3wa/Portfolio');
+            header('Location: http://localhost/3wa/Portfolio/index.php');
         }
 
     }
