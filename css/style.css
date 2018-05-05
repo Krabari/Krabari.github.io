@@ -615,7 +615,7 @@ hr{
 
 /* ecran de largeur >= 768px: vue tablette */
 
-@media screen and (min-width: 768px){
+/*@media screen and (min-width: 768px){
 
 	html{
 		font-size: 75%; 
@@ -679,7 +679,7 @@ hr{
 		margin-top: 53px;
 	}
 
-}
+}*/
 
 /* ecran de largeur >= 890px */
 
@@ -694,6 +694,38 @@ hr{
 /* ecran de largeur >= 1024px: vue: du Desktop, des grands écrans */
 
 @media screen and (min-width: 1024px){
+
+	.choix a{
+		display: inline-block;
+		padding: 0px 24px;  
+	}
+
+	.cercle_fa{
+		width: 56px;
+		height: 54px;
+	}
+
+	.nb_rep{
+		display: initial;
+		font-size: 115%;
+		font-style: italic;
+		margin-bottom: -10px;
+	}
+
+	.interface ul{
+		display: flex;
+		justify-content: space-around;
+	}
+
+	.interface li{
+		margin-bottom: initial; 
+	}
+
+	.form_inscription #B1, .form_connect #B1{
+		margin-top: 53px;
+	}
+					
+	/**************/
 
 	html{
 		font-size: 62.5%; 
@@ -740,9 +772,9 @@ hr{
 		float: left;
 	}
 
-	button{
+	/*button{
 		display: block; 
-	}
+	}*/
 
 	#B1, #B2{
 		width: 9%;

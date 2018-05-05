@@ -1,10 +1,256 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="zxx">
 	<head>
 		<meta charset="utf-8" />
 		<title>page</title>
 	</head>
 	<body>
-		<p>Pour accèder au portfolio de Kenny-Eric Rabarisoanaivo: <a href="index.php">cliquez ici</a>.</p>
+		<p>Pour accèder au portfolio de Kenny-Eric Rabarisoanaivo: <a href="master.phtml">cliquez ici</a>.</p>
+	</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 	
+
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="icon" type="image/png" href="img/logo.svg" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script>
+			// Effet de défilement animé sur la page lorsqu'on clique sur un lien 
+			$(document).ready(function() {
+				$('.scroll').on('click', function() { 
+					var page = $(this).attr('href'); 
+					var speed = 750; 	
+					$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); 
+
+					return false;
+				});
+			});
+		</script>
+
+		<title>CV Kenny-Eric Rabarisoanaivo</title>
+	</head>
+	<body>
+		<header class="container_header">
+			<section>
+				<nav class="interface">
+					<ul>
+						<li class="btn"><a href="php/inscription.php">inscription</a></li>		
+						<li>
+							<nav class="choix">
+								<a class="scroll" href="#"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a>
+								<a class="scroll" href="#comp"><i class="fa fa-folder" aria-hidden="true"></i>Compétences</a>
+								<a class="scroll" href="#real"><i class="fa fa-folder-open" aria-hidden="true"></i>Réalisations</a>
+								<a class="scroll" href="#exem"><i class="fa fa-book" aria-hidden="true"></i>Exemples</a>
+								<a class="scroll" href="#lois"><i class="fa fa-users" aria-hidden="true"></i>Loisirs</a>	<a class="scroll" href="#cont"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a>	
+							</nav>
+						</li>							
+						<li class="btn"><a href="php/login.php">connexion</a></li>
+					</ul>
+				</nav>  
+			</section>
+		</header>
+
+		<section class="middle_section">
+			<div class="container bonjour">
+				<h1>Bienvenue sur le portfolio de Kenny</h1>
+
+				<p>Bonjour, je me présente: je suis Kenny-Eric RABARISOANAIVO. J'ai 27 ans et je suis étudiant en Master 1 Ingénierie des Algorithmes et des Programmes à l'Université Paris Diderot. Durant ces années d'études, j'ai pu acquérir des connaissances théorioques. J'ai pu ensuite mettre en pratique mes connaissances en développement web en suivant une formation de 3 mois de Développeur intégrateur en réalisation d’applications web à la 3W ACADEMY, formation très riche utilisant les langages: HTML, CSS, PHP, JavaScript et MySQL.</p>
+			</div>
+		</section>
+
+		<main class="container">
+			<section class="competences">
+
+				<h2 id="comp">Mes compétences</h2>
+
+				<article>
+					<h3><strong>Web</strong></h3>  
+						<ul class="web">
+						<li class="majuscule">html5</li>
+						<li class="majuscule">css3</li>
+						<li class="majuscule">php</li>
+						<li>JavaScript</li>
+						<li>MySQL</li>
+					</ul>
+				</article><article>  
+					<h3><strong>Langages</strong></h3>					
+					<ul>
+						<li>Java</li>
+						<li>C++</li>
+						<li>C</li>
+						<li>O'Caml</li>
+						<li>Python</li>
+						<li>Shell</li>
+						<li class="majuscule">xml</li>						
+					</ul>
+				</article><article> 				
+					<h3><strong>Bureautique</strong></h3>					
+					<ul>
+						<li>Microsoft Office</li>
+						<li>Open Office</li>
+					</ul>
+				</article><article> 				
+					<h3><strong>Langues</strong></h3>
+					<ul>
+						<li>Anglais</li>
+						<li>Espagnol</li>
+					</ul>
+				</article>
+			</section>
+
+			<section class="realisations">				
+
+				<h2 id="real">Mes projets et réalisations web</h2>
+
+				<article>
+					<i class="fa fa-coffee cercle_fa" aria-hidden="true"></i>
+					<h3>2017</h3>
+					<strong>Création d'un site web restaurant en ligne</strong>
+					<ul>
+						<li>Intégration de maquettes en HTML5 et CSS3</li>
+						<li>Création d'une base de données en MySQL</li>
+						<li>Développement client/serveur en PHP et JavaScript</li>							
+					</ul>
+				</article><article>
+					<i class="fa fa-flask cercle_fa" aria-hidden="true"></i>
+					<h3>2016-2017</h3>
+					<strong>Développement d'un framework afin d'implémenter des jeux de courses</strong>
+					<ul>
+						<li>Langage utilisé: C++</li>
+						<li>Utilisation du motif: Modèle/Vue/Contrôleur (MVC)</li>
+						<li>Environnement de travail: Atom</li>							
+					</ul>
+				</article><article>
+					<i class="fa fa-code cercle_fa" aria-hidden="true"></i>
+					<h3>2015</h3>
+					<strong>Implémentation d'un correcteur d'orthographe</strong>
+					<ul>
+						<li>Langage utilisé: Python</li>
+						<li>Détection des mots mal-orthographiés d'un fichier</li>
+						<li>Liste de suggestions pour chaque erreur</li>
+						<li>Sauvegarde du texte corrigé dans un nouveau fichier</li>											
+					</ul>
+				</article>
+			</section>
+
+			<section class="exemples">			
+
+				<h2 id="exem">Quelques exemples de mes réalisations</h2>
+
+				<article>
+					<h3>Cup Of Tea:</h3>
+
+					<img src="img/realisation/1.png" alt="maquette1"/>
+
+					<p>Le thé représente une vaste gamme de boissons aromatiques, gustatives ou désaltérantes, obtenues par infusion ou percolation d'eau sur diverses préparations à partir des petites feuilles et des bourgeons de théier, un arbuste à feuilles persistantes originaire d'Asie. Ces diverses boissons aqueuses peuvent être par exemple obtenues à partir de feuilles séchées (thé vert) ou diversement fermentées (thé noir), selon les traditions, les portions liquides sont bues chaudes, tièdes ou froides, en quantités très variables, diluées, faiblement ou fortement concentrées, et parfois additionnées de diverses matières d'origine végétale ou animale.</p>
+
+					<p>Parce que le thé est avant tout une origine, Cup Of Tea parcourt le monde pour vous faire découvrir des récoltes d’exception. De la relation engagée que nous cultivons avec chacun de nos producteurs naît une infinie palette de saveurs et d’émotions.</p>
+
+					<a href="../integration/maquettes/M12_-_Cup_of_Tea/" class="bouton">Voir le site<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+				</article>
+				<article> 
+					<h3>Mingeek:</h3>
+
+					<img src="img/realisation/2.png" alt="maquette2"/>
+
+					<p>MindGeek continue de faire évoluer la technologie vers le futur en développant les principales solutions de l’industrie pour une livraison plus rapide et plus efficace du contenu chaque seconde à destination de millions de clients à travers le monde. L’entreprise travaille chaque jour à l’amélioration de ses capacités technologiques et à développer une croissance durable fondée sur l’innovation et l’excellence.</p>
+
+					<p>Avec plus de 1000 employés dans le monde entier, MindGeek poursuit son expansion avec l’acquisition et l’octroi de licence pour certaines des marques les plus emblématiques du secteur des médias et du divertissement</p>
+
+					<p>MindGeek est l’une des principales entreprises de technologie de l’information au monde avec des bureaux au Luxembourg, à Nicosie, à Hambourg, à Londres, à Montréal, à Bucarest et à Los Angeles.</p>
+
+					<a href="../integration/maquettes/M11_-_Mindgeek/" class="bouton">Voir le site<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+				</article>
+				<article>
+					<h3>Wolf Gang:</h3>
+
+					<img src="img/realisation/3.png" alt="maquette3"/>
+
+					<p>L'objectif de Wolf Gang étant la meilleure vitesse et la prise d'angle sur les virages, elles sont généralement dotées de moteurs optimisés pour les montées à hauts régimes, de freins puissants.</p>
+
+					<p>A cylindrée égale, elles sont souvent plus performantes et plus fragiles que les machines des autres catégories et souvent plus légères.</p>
+
+					<p>Parfois dérivées des modèles de compétition, les motos sportives de Wolf Gang pourtant homologuées pour un usage routier (rétroviseurs, normes anti-pollution, feux, clignotants et plaque d'immatriculation) restent d'un intérêt limité au quotidien en milieu urbain ou autoroutier (du fait de la position de conduite, l'amortissement et la manœuvrabilité à l’arrêt).</p>
+
+					<a href="../integration/maquettes/M09_-_Wolf_Gang/" class="bouton">Voir le site<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+				</article>
+				<article>
+					<h3>Creasoul:</h3>
+
+					<img src="img/realisation/4.png" alt="maquette4"/>
+
+					<p>Creasoul est une société de Branding située à Kannur, Kerala. Notre vision consiste à fournir à nos clients des solutions informatiques de haute qualité à valeur ajoutée en combinant les compétences technologiques, l'expertise en matière de processus d'expertise du domaine et l'engagement envers une relation client à long terme.</p>
+
+					<p>Une synthèse précise sur les avancées les plus récentes de l'informatique et des télécommunications, sur leurs évolutions prévisibles à court et moyen terme, et leur impact sur les entreprises : construire des réseaux services, les sécuriser ; maîtriser les technologies Internet ; mesurer l'impact de la mobilité et du commerce électronique ; intégrer la mobilité dans les méthodes de développement ; mettre en place des applications client-serveur et Cloud ; choisir un processus de développement adapté aux nouvelles technologies.</p>
+
+					<a href="../integration/maquettes/M08_-_Creasoul/" class="bouton">Voir le site<i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+				</article>
+			</section>
+
+			<section class="interets">			
+
+				<h2 id="lois">Mes centres d'intérêt</h2>
+
+				<article>  								
+					<img src="img/loisir/montage_videos.jpg" alt="loisir1"/>
+					<h3><strong>Montages vidéos</strong></h3>
+				</article><article>								
+					<img src="img/loisir/piano.jpg" alt="loisir2"/>
+					<h3><strong>Piano</strong></h3> 
+				</article><article>														
+					<img src="img/loisir/salsa.jpg" alt="loisir3"/>	
+					<h3><strong>Salsa</strong></h3>										
+				</article>
+			</section>
+
+			<section class="messages">
+
+				<h2 id="mess" class="zeromsg">Liste des messages</h2>
+
+				<h3 id="nb_msg">O messages:</h3>
+																								
+			</section>
+
+			<section class="contact">
+
+				<h2 id="cont">Contactez-moi</h2>
+
+				<p class="msg">Pour publier un message, vous devez être connecté (allez dans 'connexion').<br/>Sinon, vous pouvez aussi me joindre à l'aide de mes coordoonées ci-dessous.</p>
+
+			</section>
+
+			<script src="js/main.js"></script>	
+		</main>
+
+		<footer>
+			<section class="contacts">
+				<article>
+					<h3><i class="fa fa-envelope" aria-hidden="true"></i></h3>
+					<div>
+						<a class="coord" href="mailto:Kenrabari@yahoo.fr"> <i class="couleur">Kenny.Eric@gmail.com</i></a>
+					</div>
+				</article>
+				<article>
+					<h3><i class="fa fa-phone" aria-hidden="true"></i></h3>
+					<div>
+						<a class="coord" href="tel:+33664680168"> <i class="couleur">+33 8 76 54 32 01</i></a>
+					</div>
+				</article>
+				<article>
+					<h3><i class="fa fa-paper-plane" aria-hidden="true"></i></h3>
+					<a class="coord" href=""> <i class="couleur">Paris, FRANCE</i></a>
+				</article>
+			</section>
+			<p>
+				<small>© Copyright 2018 Kenny-Eric Rabarisoanaivo.</small>
+			</p>							
+		</footer>
 	</body>
 </html>
