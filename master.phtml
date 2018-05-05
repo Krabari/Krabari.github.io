@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="<?= $page->getNormalize_css(); ?>" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 	
+
+		<link rel="stylesheet" type="text/css" href="<?= $page->getStyle_css(); ?>" />
+		<link rel="icon" type="image/png" href="img/logo.svg" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script>
+			// Effet de défilement animé sur la page lorsqu'on clique sur un lien 
+			$(document).ready(function() {
+				$('.scroll').on('click', function() { 
+					var page = $(this).attr('href'); 
+					var speed = 750; 	
+					$('html, body').animate( { scrollTop: $(page).offset().top }, speed ); 
+
+					return false;
+				});
+			});
+		</script>
+
+		<title>CV Kenny-Eric Rabarisoanaivo</title>
+	</head>
+	<body>
+		<!-- navigation et page de présentation -->
+		<?php
+			if(!empty($page->getHead())){ 
+				include $page->getHead();
+			} 
+		?>
+
+		<!-- contenu principal de la page -->
+		<main class="container">
+
+			<?php include $page->getTemplate_name(); ?>			
+			<script src="<?= $page->getScripts(); ?>"></script>	
+
+		</main>
+
+		<!-- pied de la page -->		
+		<?php
+			if(!empty($page->getFooter())){ 
+				include $page->getFooter();
+			} 
+		?>
+
+	</body>
+</html>

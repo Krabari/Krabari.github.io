@@ -1,0 +1,79 @@
+<!-- code phtml qu'on incluera dans master.phtml avec la variable $template_name -->
+
+<p>
+	<?php if($page->getUserSession()->estConnecte()): ?>
+		<p id="identite2">Bonjour <b><?= $page->getUserSession()->getPrenom() . ' ' . $page->getUserSession()->getNom(); ?></b> !</p>
+	<?php endif; ?> 	 
+
+	<a href="../index.php#mess" class="souligne lien_retour">
+		<i class="fa fa-arrow-left" id="fleche" aria-hidden="true"></i>
+		Retour sur la messagerie
+	</a>
+</p>
+
+<h2 id="cont"><?= $page->getUnMessage()['titre']; ?></h2>
+
+<section>
+	<h3><abbr title="e-mail">mail:</abbr><?= ' ' . $page->getUnMessage()['mail']; ?></h3>
+
+	<h3>Publié le: <?= $fct->formatDateFrance($page->getUnMessage()['date']); ?>, par <i><?= $page->getUnMessage()['prenom'] . ' ' . $page->getUnMessage()['nom']; ?></i></h3>
+
+	<p class="paragraphe_message">
+		<?= $page->getUnMessage()['contenu']; ?>
+	</p>
+</section>
+
+<hr/>
+
+<?php if ($page->getFlashBag()->contientMessages()) : ?>
+	<?php foreach ($page->getFlashBag()->Messages() as $msg) : ?>
+
+		<div class="success pos2"><?= $msg; ?></div>
+							
+	<?php endforeach ?>	
+<?php endif ?>
+
+<section class="reponses">
+	<h3 id="nb_msg"><i><?= $fct->pluriel_ou_pas($page->getNbRep(), "réponse"); ?>:</i></h3>
+
+	<?php foreach ($page->getReponses() as $index => $reponse) : ?>
+
+		<section class="answer_content">			
+
+			<b><i><?= $reponse['pseudo']; ?></i></b>, le <i><?= $fct->formatDateFrance($reponse['date']); ?></i>
+
+			<?php if($page->getUserSession()->estConnecte()): ?>
+				<a href="remove_answer.php?id=<?= $reponse['id']; ?>&id_msg=<?= $page->getunMessage()['id']; ?>&id_user=<?= $reponse['id_user']; ?>" class="delete_logo" title="supprimer le message" onClick="return confirmerSupprimerReponse(<?= $reponse['id_user']; ?>, <?= $page->getUserSession()->getId(); ?>)">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</a>
+			<?php endif; ?> 
+
+			<p><?= $reponse['contenu']; ?></p>
+
+		</section>
+
+	<?php endforeach; ?>	
+</section>
+
+<hr/>
+
+<section class="contact">
+	<?php if($page->getUserSession()->estConnecte()): ?>
+		<h3>Répondre:</h3>
+
+		<form action="add_answer.php" method="POST" onSubmit="return confirmerRepondre();">
+			<input type="hidden" name="id_msg" value="<?= $_GET['id']; ?>">
+			
+			<textarea rows="10" name="ecrire_msg" placeholder="Entrez un message" required></textarea>
+
+			<button type="submit" id="B1">Répondre</button>
+			<button type="reset" id="B2">Annuler</button>
+		</form>
+	<?php else: ?>
+		
+		<p class="msg">Pour répondre, vous devez être connecté.</p>	
+
+	<?php endif; ?> 
+</section>
+
+

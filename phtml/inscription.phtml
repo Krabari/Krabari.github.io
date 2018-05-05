@@ -1,0 +1,40 @@
+<!-- code phtml représentant la page d'inscription que l'on incluera dans master.phtml avec la fonction getTemplate_name() de la classe Init -->
+
+<p>
+	<a href="../." class="souligne lien_retour">
+		<i class="fa fa-arrow-left" id="fleche" aria-hidden="true"></i>
+		Retour sur mon site
+	</a>
+</p>
+
+<section class="contact">
+	<h2>Inscription</h2>
+	
+	<p class="msg">Création d'un compte: <br/> (Ne pas mettre d'accents)</p>
+
+	<form class="form_inscription" action="add_user.php" method="POST" onSubmit="return confirmerInscription();">
+		<p>Identité et coordonnées:</p>
+
+		<input type="text" name="nom" class="nom" placeholder="Entrez votre nom" value="<?= isset($_SESSION['POST']['nom']) ? $_SESSION['POST']['nom'] : ''  ?>" pattern="^[a-z|A-Z|-]+$" required>
+		<input type="text" name="prenom" class="prenom" placeholder="Entrez votre prénom" value="<?= isset($_SESSION['POST']['prenom']) ? $_SESSION['POST']['prenom'] : ''  ?>" pattern="^[a-z|A-Z|-]+$" required>
+		<input type="email" name="email" class="email" placeholder="Entrer votre mail" value="<?= isset($_SESSION['POST']['email']) ? $_SESSION['POST']['email'] : ''  ?>" required>
+
+		<p>Informations d'authentification:</p>
+
+		<?php if ($page->getFlashBag()->contientMessages()) : ?>
+			<?php foreach ($page->getFlashBag()->Messages() as $msg) : ?>
+
+				<div class="error"><?= $msg; ?></div>
+							
+			<?php endforeach ?>	
+		<?php endif ?>
+
+		<input type="text" name="pseudo" class="nom" placeholder="Définir un pseudo" value="<?= isset($_SESSION['POST']['pseudo']) ? $_SESSION['POST']['pseudo'] : ''  ?>" pattern="^[0-9|a-z|A-Z]+$" required>
+		<input type="password" name="motdepasse" class="nom" value="<?= isset($_SESSION['POST']['motdepasse']) ? $_SESSION ['POST']['motdepasse'] : ''  ?>" placeholder="Définir un mot de passe" pattern="^[0-9|a-z|A-Z]+$" required>
+		<input type="password" name="motdepasse2" class="nom" placeholder="Confirmer votre mot de passe" pattern="^[0-9|a-z|A-Z]+$" required>	       	
+
+		<button type="submit" id="B1">Valider</button>
+		<button type="reset" id="B2">Annuler</button>
+	</form>
+
+</section>

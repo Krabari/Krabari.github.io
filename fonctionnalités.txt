@@ -1,0 +1,14 @@
+Fonctionnalités de mon portfolio:
+---------------------------------
+
+Le portfolio représente globalement mon CV. 
+
+Toute personne a la possibilité de devenir un utilisateur en fournissant ses coordonnées (en haut à gauche du site). 
+Ainsi, il créera un nouvel identifiant (pseudo) et un mot de passe qui pourront ensuite être utiles pour se connecter (en haut à droite du site).
+Par conséquent, étant connecté, il pourra poster publiquement un (ou plusieurs) message(s) dans la messagerie (tout en bas de la page) si éventuellement il a des questions sur le contenu. D'autres utilisateurs pourront par la suite répondre à son message (ils devront cliquer sur le message pour y répondre). 
+Plus tard, l'utilisateur pourra supprimer son (ou ses) message(s) à condition qu'il en soit l'auteur. 
+De même pour les réponses qu'il a posté. 
+
+La messagerie sera présentée sous forme de blog: 
+	- liste de messages sous forme d'articles.
+	- chaque message aura (ou non) sa liste de réponses sous forme de commentaires.

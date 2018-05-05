@@ -1,0 +1,23 @@
+<!-- code phtml représentant la navigation d'accueil ainsi que la présentation qu'on incluera dans master.phtml avec la fonction getHead() de la classe Init -->
+
+<header class="container_header">
+	<section>
+		<?php if ($page->getFlashBag()->contientMessages()) : ?>
+			<?php foreach ($page->getFlashBag()->Messages() as $msg) : ?>
+
+				<div class="success"><?= $msg; ?></div>
+								
+			<?php endforeach ?>	
+		<?php endif ?>
+		
+		<?php include $page->getNavigation(); ?>
+	</section>
+</header>
+
+<section class="middle_section">
+	<div class="container bonjour">
+		<h1>Bienvenue sur le portfolio de Kenny</h1>
+
+		<p>Bonjour, je me présente: je suis Kenny-Eric RABARISOANAIVO. J'ai 27 ans et je suis étudiant en Master 1 Ingénierie des Algorithmes et des Programmes à l'Université Paris Diderot. Durant ces années d'études, j'ai pu acquérir des connaissances théorioques. J'ai pu ensuite mettre en pratique mes connaissances en développement web en suivant une formation de 3 mois de Développeur intégrateur en réalisation d’applications web à la 3W ACADEMY, formation très riche utilisant les langages: HTML, CSS, PHP, JavaScript et MySQL.</p>
+	</div>
+</section>

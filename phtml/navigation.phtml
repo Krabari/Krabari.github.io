@@ -1,0 +1,34 @@
+<!-- code phtml, répresentant la bar de navigation, qu'on incluera dans head.phtml avec la fonction getNavigation() de la classe Init --> 
+
+<nav class="interface">
+	<?php if($page->getUserSession()->estConnecte()): ?>
+		<ul>
+			<li id="identite">Bonjour <b><?= $page->getUserSession()->getPrenom() . ' ' . $page->getUserSession()->getNom(); ?> !</b></li>
+			<li>
+				<nav class="choix">
+					<a class="scroll" href="#"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a>
+					<a class="scroll" href="#comp"><i class="fa fa-folder" aria-hidden="true"></i>Compétences</a>	<a class="scroll" href="#real"><i class="fa fa-folder-open" aria-hidden="true"></i>Réalisations</a>
+					<a class="scroll" href="#exem"><i class="fa fa-book" aria-hidden="true"></i>Exemples</a>
+					<a class="scroll" href="#lois"><i class="fa fa-users" aria-hidden="true"></i>Loisirs</a>		
+					<a class="scroll" href="#cont"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a>		
+				</nav>
+			</li>									
+			<li class="btn"><a href="php/logout.php" id="deconnecting">deconnexion</a></li>
+		</ul>
+	<?php else: ?>
+		<ul>
+			<li class="btn"><a href="php/inscription.php">inscription</a></li>		
+			<li>
+				<nav class="choix">
+					<a class="scroll" href="#"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a>
+					<a class="scroll" href="#comp"><i class="fa fa-folder" aria-hidden="true"></i>Compétences</a>	
+					<a class="scroll" href="#real"><i class="fa fa-folder-open" aria-hidden="true"></i>Réalisations</a>
+					<a class="scroll" href="#exem"><i class="fa fa-book" aria-hidden="true"></i>Exemples</a>
+					<a class="scroll" href="#lois"><i class="fa fa-users" aria-hidden="true"></i>Loisirs</a>		
+					<a class="scroll" href="#cont"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a>			
+				</nav>							
+			<li class="btn"><a href="php/login.php">connexion</a></li>
+		</ul>
+	<?php endif; ?>    
+</nav>  
+

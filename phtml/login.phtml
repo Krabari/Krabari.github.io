@@ -1,0 +1,34 @@
+<!-- code phtml représentant la page de connexion que l'on incluera dans master.phtml avec la fonction getTemplate_name() de la classe Init  -->
+
+<p>
+	<a href="../." class="souligne lien_retour">
+		<i class="fa fa-arrow-left" id="fleche" aria-hidden="true"></i>
+		Retour sur mon site
+	</a>
+</p>
+
+<section class="contact">
+	<h2>Connexion</h2>
+	
+	<p class="msg">Pour se connecter, vous devez être inscrit (allez dans 'inscription').</p>
+
+	<form class="form_connect" action="../php/open_session.php" method="POST">
+		<p>Informations d'authentification:</p>
+
+		<?php if ($page->getFlashBag()->contientMessages()) : ?>
+			<?php foreach ($page->getFlashBag()->Messages() as $msg) : ?>
+
+				<div class="error"><?= $msg; ?></div>
+							
+			<?php endforeach ?>	
+		<?php endif ?>
+
+		<input type="text" name="pseudo" class="nom" placeholder="Entrez votre pseudo" value="<?= isset($_SESSION['POST']['pseudo']) ? $_SESSION ['POST']['pseudo'] : ''  ?>" required>
+		<input type="password" name="motdepasse" class="nom" placeholder="Entrez votre mot de passe" value="<?= isset($_SESSION['POST']['motdepasse']) ? $_SESSION ['POST']['motdepasse'] : ''  ?>" required>	       			
+
+		<button type="submit" id="B1">Valider</button>
+		<button type="reset" id="B2">Annuler</button>
+
+	</form>
+
+</section>
