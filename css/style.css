@@ -699,6 +699,10 @@ hr{
 		font-size: 62.5%; 
 	}
 
+	button{
+		display: block;
+	}
+
 	.losange{
 		display: inline-block; 	
 	}
