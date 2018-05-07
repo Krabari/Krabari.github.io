@@ -567,7 +567,7 @@ hr{
     }
 }
 
-/***** pour tous les logos dans les input (ou textarea) des formulaires: ********/
+/***** pour tous les logos dans les input (ou textarea) des formulaires + fond d'image ecran d'accueil: ********/
 
 /* ecran de largeur >= 374px */
 
@@ -617,41 +617,39 @@ hr{
 
 @media screen and (min-width: 768px){
 
-	html{
-		font-size: 75%; 
-	}
-
-	.choix a{
-		display: inline-block;
-		padding: 0px 24px;  
-	}
-
-	button{
-		display: inline-block;
-	}
-
-	#B1{
-	  	margin-left: 39%; 
-	  	width: 13%;
-	}
-
-	#B2{
-	  	width: 13%;
-	}
+	.nom, .prenom, .email, textarea, #object{
+		background-size: 3.5%;
+		background-position: 7px 5px;
+	}	
 
 	.middle_section{
 		background-size: 150%; 
 		background-position: -254px -118px;  
 	}
 
+}
+
+/* ecran de largeur >= 890px */
+
+@media screen and (min-width: 890px){
 
 	.nom, .prenom, .email, textarea, #object{
-		background-size: 3.5%;
-		background-position: 7px 5px;
+		background-size: 2.5%;
 	}
 
-	.interets img{
-		width: 25%;
+}
+
+/* ecran de largeur >= 1024px: vue: du Desktop, des grands écrans */
+
+@media screen and (min-width: 1024px){
+
+	html{
+		font-size: 62.5%; 
+	}
+
+	.choix a{
+		display: inline-block;
+		padding: 0px 24px;  
 	}
 
 	.cercle_fa{
@@ -677,30 +675,6 @@ hr{
 
 	.form_inscription #B1, .form_connect #B1{
 		margin-top: 53px;
-	}
-
-}
-
-/* ecran de largeur >= 890px */
-
-@media screen and (min-width: 890px){
-
-	.nom, .prenom, .email, textarea, #object{
-		background-size: 2.5%;
-	}
-
-}
-
-/* ecran de largeur >= 1024px: vue: du Desktop, des grands écrans */
-
-@media screen and (min-width: 1024px){
-
-	html{
-		font-size: 62.5%; 
-	}
-
-	button{
-		display: block;
 	}
 
 	.losange{
