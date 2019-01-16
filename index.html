@@ -2,11 +2,11 @@
 <html lang="zxx">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="<?= $page->getNormalize_css(); ?>" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet"> 	
 
-		<link rel="stylesheet" type="text/css" href="<?= $page->getStyle_css(); ?>" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="icon" type="image/png" href="img/logo.svg" />
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -30,15 +30,21 @@
 		<!-- navigation et page de présentation -->
 		<header class="container_header">
 			<section>
-				<?php if ($page->getFlashBag()->contientMessages()) : ?>
-					<?php foreach ($page->getFlashBag()->Messages() as $msg) : ?>
-
-						<div class="success"><?= $msg; ?></div>
-										
-					<?php endforeach ?>	
-				<?php endif ?>
-				
-				<?php include $page->getNavigation(); ?>
+				<nav class="interface">
+					<ul>
+						<li class="btn"><a href="php/inscription.php">inscription</a></li>		
+						<li>
+							<nav class="choix">
+								<a class="scroll" href="#"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a>
+								<a class="scroll" href="#comp"><i class="fa fa-folder" aria-hidden="true"></i>Compétences</a>	
+								<a class="scroll" href="#real"><i class="fa fa-folder-open" aria-hidden="true"></i>Projets</a>
+								<a class="scroll" href="#exem"><i class="fa fa-book" aria-hidden="true"></i>Exemples</a>
+								<a class="scroll" href="#lois"><i class="fa fa-users" aria-hidden="true"></i>Loisirs</a>		
+								<a class="scroll" href="#cont"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a>			
+							</nav>							
+						<li class="btn"><a href="php/login.php">connexion</a></li>
+					</ul> 
+				</nav>  
 			</section>
 		</header>
 
@@ -99,7 +105,7 @@
 
 			<section class="realisations">				
 
-				<h2 id="real">Mes projets et réalisations web</h2>
+				<h2 id="real">Mes projets</h2>
 
 				<article>
 					<i class="fa fa-coffee cercle_fa" aria-hidden="true"></i>
@@ -254,23 +260,8 @@
 
 				<h2 id="cont">Contactez-moi</h2>
 
-				<?php if($page->getUserSession()->estConnecte()): ?>
+				<p class="msg">Pour publier un message, vous devez être connecté.<br/>(allez dans 'connexion')</p>
 
-					<p class="msg">Si vous avez des questions, n'hésitez pas à poster un message à l'aide du formulaire ci-dessous. Vous pouvez aussi me joindre à l'aide de mes coordoonées ci-dessous.</p>
-
-					<form action="php/add_message.php" method="POST" onSubmit="return confirmerPublier();">	       			
-						<input type="text" name="object" id="object" placeholder="Objet du message">	       			
-						<textarea name="ecrire" rows="10" placeholder="Publier un message" required></textarea>
-
-						<button type="submit" id="B1">Envoyer</button>
-						<button type="reset" id="B2">Annuler</button>
-					</form>
-
-				<?php else: ?>
-
-					<p class="msg">Pour publier un message, vous devez être connecté.<br/>(allez dans 'connexion')</p>
-
-				<?php endif; ?> 
 			</section>	
 			<script src="js/main.js"></script>	
 
