@@ -16,6 +16,7 @@ $page->main();
 
 $fct = new Utilities();
 
-include "master.phtml";
+//include "master.phtml";
+include "index.html";
 
 
