@@ -213,46 +213,7 @@
 
 				<h2 id="mess" class="zeromsg">Liste des messages</h2>
 
-				<?php if ($page->getFlashBag2()->contientMessages()) : ?>
-					<?php foreach ($page->getFlashBag2()->Messages() as $msg) : ?>
-
-						<div class="success pos1"><?= $msg; ?></div>
-											
-					<?php endforeach; ?>	
-				<?php endif ?>
-
-				<h3 id="nb_msg"><?= $fct->pluriel_ou_pas(count($page->getMessages()),"message"); ?>:</h3>
-
-				<?php foreach ($page->getMessages() as $index => $message) : ?>
-
-					<article class="message_content">
-						<div class="topline">
-							<a href="php/message.php?id=<?= $message['id']; ?>" title="voir le message en détail"><h3 class="souligne"><?= $message['titre']; ?></h3></a>
-
-							<?php if($page->getUserSession()->estConnecte()): ?>
-								<div class="buttons">
-									<a href="index.php#mess" title="supprimer le message" onClick="return confirmerSupprimerMessage(<?= $message['id']; ?>, <?= $message['id_user']; ?>, <?= $page->getUserSession()->getId(); ?>, <?= $message['nbc']; ?>)">
-										<i class="fa fa-times" aria-hidden="true"></i>
-									</a>
-								</div>
-							<?php endif; ?> 
-						</div>
-
-						<p><?= $page->debutparagraphe($message, $fct); ?></p>
-
-						<small class="published">
-							<a href="index.php#mess">
-								<i class="fa fa-calendar" aria-hidden="true"></i>
-								Publié le <?= $fct->formatDateFrance($message['date']); ?>, par <i><?= $message['prenom'] . ' ' . $message['nom']; ?></i>
-							</a>
-							<a href="php/message.php?id=<?= $message['id']; ?>" title="voir le message en détail" class="souligne nb_rep">
-								<i class="fa fa-comment" aria-hidden="true"></i>
-								<?= $fct->pluriel_ou_pas($message['nbc'], "réponse"); ?> 
-							</a>						
-						</small>
-					</article>
-
-				<?php endforeach; ?>
+				<h3 id="nb_msg">0 message:</h3>
 																								
 			</section>
 
