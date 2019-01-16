@@ -28,7 +28,7 @@ class Init{
         $this->flashBag = new FlashBag("flash-bag");
         $this->flashBag2 = new FlashBag2("flash-bag2");
 
-        $this->pdo = new PDO('mysql:host=localhost;dbname=portfolio', 'root', 'root');
+        $this->pdo = new PDO('mysql:host=localhost;dbname=portfolio', 'root', 'kenrab');
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->exec('SET NAMES UTF8');
 
